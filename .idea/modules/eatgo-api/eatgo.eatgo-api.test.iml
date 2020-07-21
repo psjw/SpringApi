@@ -22,6 +22,7 @@
     <orderEntry type="module" module-name="eatgo.eatgo-api.main" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:2.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.13" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:2.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test:2.3.1.RELEASE" level="project" />
@@ -40,6 +41,7 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.2.7.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.2.7.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:2.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:2.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.3.1.RELEASE" level="project" />
