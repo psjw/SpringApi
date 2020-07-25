@@ -3,6 +3,7 @@ package com.ljw.eatgo.interfaces;
 
 import com.ljw.eatgo.domain.Restaurant;
 import com.ljw.eatgo.domain.RestaurantRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +15,8 @@ import java.util.Scanner;
 @RestController
 public class RestaurantController {
 
-
-    private RestaurantRepository repositoty=new RestaurantRepository();
+    @Autowired
+    private RestaurantRepository repositoty;
 
     @GetMapping("/restaurants")
     public List<Restaurant> list(){
