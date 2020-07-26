@@ -14,6 +14,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+@CrossOrigin//CORS 해결
 @RestController
 public class RestaurantController {
 
