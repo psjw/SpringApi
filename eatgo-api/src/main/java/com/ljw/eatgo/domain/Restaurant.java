@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
-    private final String name;
-    private final String address;
-    private final Long id;
+    private  String name;
+    private  String address;
+    private  Long id;
     private List<MenuItem> menuItems=new ArrayList<MenuItem>();
 
+    public Restaurant() {
+    }
 
     public Restaurant(Long id, String name, String address) {
         this.name = name;
@@ -16,7 +18,15 @@ public class Restaurant {
         this.id = id;
     }
 
+    public Restaurant(String name, String address) {
+        this.name=name;
+        this.address=address;
+    }
 
+
+    public void setId(long id) {
+        this.id=id;
+    }
     public String getName() {
         return name;
     }
@@ -46,4 +56,5 @@ public class Restaurant {
             addMenuItem(menuItem);
         }
     }
+
 }

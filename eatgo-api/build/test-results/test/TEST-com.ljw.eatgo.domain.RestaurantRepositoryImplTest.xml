@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ljw.eatgo.domain.RestaurantRepositoryImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-26T11:01:54" hostname="DESKTOP-5704N4R" time="0.009">
+  <properties/>
+  <testcase name="save" classname="com.ljw.eatgo.domain.RestaurantRepositoryImplTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
