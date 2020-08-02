@@ -21,6 +21,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
@@ -96,5 +97,14 @@ public class RestaurantControllerTest {
 
         //given  willReturn 을 확인 가능
         verify(restaurantService).addRestaurant(any());
+    }
+
+    @Test
+    public void update() throws Exception {
+        mvc.perform(patch("/restaurants/1004")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"name\":\"JOKER Bar\",\"address\":\"Busan\"}"))
+                .andExpect(status().isOk());
+        verify(restaurantService).updateRestaurant(1004L,"JOKER Bar","Busan");
     }
 }

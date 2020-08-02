@@ -1,17 +1,15 @@
 package com.ljw.eatgo.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Restaurant {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
     private Long id;
+
     private  String name;
     private  String address;
  
@@ -66,4 +64,12 @@ public class Restaurant {
         }
     }
 
+    public void setName(String name) {
+        this.name=name;
+    }
+
+    public void updateInformation(String name, String address) {
+        this.name=name;
+        this.address=address;
+    }
 }
