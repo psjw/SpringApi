@@ -1,10 +1,17 @@
 package com.ljw.eatgo.domain;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
@@ -14,10 +21,8 @@ public class Restaurant {
     private  String address;
  
     @Transient //무시하고 통과
-    private List<MenuItem> menuItems=new ArrayList<MenuItem>();
+    private List<MenuItem> menuItems;
 
-    public Restaurant() {
-    }
 
     public Restaurant(Long id, String name, String address) {
         this.name = name;
@@ -31,23 +36,9 @@ public class Restaurant {
     }
 
 
-    public void setId(long id) {
-        this.id=id;
-    }
-    public String getName() {
-        return name;
-    }
 
     public String getInfomation() {
         return name + " in " + address;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public void addMenuItem(MenuItem menuItem){
@@ -59,14 +50,13 @@ public class Restaurant {
     }
 
     public void setMenuItems(List<MenuItem> menuItems) {
+        this.menuItems = new ArrayList<>();
         for(MenuItem menuItem:menuItems){
             addMenuItem(menuItem);
         }
     }
 
-    public void setName(String name) {
-        this.name=name;
-    }
+
 
     public void updateInformation(String name, String address) {
         this.name=name;

@@ -38,7 +38,10 @@ public class RestaurantServiceTest {
 
     private void mockRestaurantRepository() {
         ArrayList<Restaurant> restaurants=new ArrayList<>();
-        Restaurant restaurant=new Restaurant(1004L,"Bob zip","Seoul");
+        Restaurant restaurant=Restaurant.builder().id(1004L).name("Bob zip").address("Seoul")
+                .build();
+
+        //Restaurant restaurant=new Restaurant(1004L,"Bob zip","Seoul");
         restaurants.add(restaurant);
         given(restaurantRepository.findAll()).willReturn(restaurants);
 

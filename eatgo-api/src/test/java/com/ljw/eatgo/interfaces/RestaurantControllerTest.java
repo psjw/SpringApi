@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.Matchers.containsString;
@@ -62,9 +63,9 @@ public class RestaurantControllerTest {
     @Test
     public void detail() throws Exception {
         Restaurant restuarant1=new Restaurant(1004L,"JOKER House","Seoul");
-        restuarant1.addMenuItem(new MenuItem("Kimchi"));
+        restuarant1.setMenuItems(Arrays.asList(new MenuItem("Kimchi")));
         Restaurant restuarant2=new Restaurant(2020L,"Cyber Food","Seoul");
-        restuarant2.addMenuItem(new MenuItem("Kimchi"));
+        restuarant2.setMenuItems(Arrays.asList(new MenuItem("Kimchi")));
         given(restaurantService.getRestaurant(1004L)).willReturn(restuarant1);
         given(restaurantService.getRestaurant(2020L)).willReturn(restuarant2);
 
