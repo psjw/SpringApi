@@ -51,7 +51,7 @@ public class RestaurantServiceTest {
 
     private void mockMenuItemRepository() {
         List<MenuItem> menuItems=new ArrayList<>();
-        menuItems.add(new MenuItem("Kimchi"));
+        menuItems.add( MenuItem.builder().name("Kimchi").build());
         given(menuItemRepository.findAllByRestaurantId(1004L)).willReturn(menuItems);
     }
 
@@ -76,12 +76,20 @@ public class RestaurantServiceTest {
     @Test
     public void addRestaurant(){
 
+        given(restaurantRepository.save(any())).will(invocation -> {
+            Restaurant restaurant=invocation.getArgument(0);
+            restaurant.setId(1234L);
+//            return restaurant;
+            return Restaurant.builder().id(1234L).name(restaurant.getName()).address(restaurant.getAddress()).build();
+        });
 
-        Restaurant restaurant = new Restaurant("BeRyong", "Busan");
-        Restaurant saved = new Restaurant(1234L,"BeRyong", "Busan");
+//        Restaurant restaurant = new Restaurant("BeRyong", "Busan");
+        Restaurant restaurant=Restaurant.builder().name("BeRyong").address("Busan").build();
+//        Restaurant saved = new Restaurant(1234L,"BeRyong", "Busan");
+        Restaurant saved=Restaurant.builder().id(1234L).name("BeRyong").address("Busan").build();
 
 
-        given(restaurantRepository.save(any())).willReturn(saved);
+//        given(restaurantRepository.save(any())).willReturn(saved);
         Restaurant created= restaurantService.addRestaurant(restaurant);
         assertThat(created.getId(),is(1234L));
     }
@@ -89,7 +97,8 @@ public class RestaurantServiceTest {
     @Test
     public void updateRestaurant(){
 
-        Restaurant restaurant=new Restaurant(1004L,"Bob zip","Seoul");
+//        Restaurant restaurant=new Restaurant(1004L,"Bob zip","Seoul");
+        Restaurant restaurant=Restaurant.builder().id(1004L).name("Bob zip").address("Seoul").build();
         given(restaurantRepository.findById(1004L)).willReturn(java.util.Optional.of(restaurant));
        restaurantService.updateRestaurant(1004L,"Sool zip","Busan");
 

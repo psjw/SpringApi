@@ -50,7 +50,8 @@ public class RestaurantControllerTest {
     public void list() throws Exception {
 
         List<Restaurant> restaurants=new ArrayList<>();
-        restaurants.add(new Restaurant(1004L,"JOKER House","Seoul"));
+//        restaurants.add(new Restaurant(1004L,"JOKER House","Seoul"));
+        restaurants.add(Restaurant.builder().id(1004L).name("JOKER House").address("Seoul").build());
         given(restaurantService.getRestaurants()).willReturn(restaurants);
         //Ctrl Option O import정리
         mvc.perform(MockMvcRequestBuilders.get("/restaurants")).andExpect(status().isOk())
@@ -62,10 +63,13 @@ public class RestaurantControllerTest {
 
     @Test
     public void detail() throws Exception {
-        Restaurant restuarant1=new Restaurant(1004L,"JOKER House","Seoul");
-        restuarant1.setMenuItems(Arrays.asList(new MenuItem("Kimchi")));
-        Restaurant restuarant2=new Restaurant(2020L,"Cyber Food","Seoul");
-        restuarant2.setMenuItems(Arrays.asList(new MenuItem("Kimchi")));
+//        Restaurant restuarant1=new Restaurant(1004L,"JOKER House","Seoul");
+        Restaurant restuarant1= Restaurant.builder().id(1004L).name("JOKER House").address("Seoul").build();
+        MenuItem menuItem=MenuItem.builder().name("Kimchi").build();
+        restuarant1.setMenuItems(Arrays.asList(menuItem));
+//        Restaurant restuarant2=new Restaurant(2020L,"Cyber Food","Seoul");
+        Restaurant restuarant2=Restaurant.builder().id(2020L).name("Cyber Food").address("Seoul").build();
+//        restuarant2.setMenuItems(Arrays.asList(new MenuItem("Kimchi")));
         given(restaurantService.getRestaurant(1004L)).willReturn(restuarant1);
         given(restaurantService.getRestaurant(2020L)).willReturn(restuarant2);
 
@@ -89,6 +93,11 @@ public class RestaurantControllerTest {
         //restaurant 가 다르다 -> any()를 통해 해결
        // Restaurant restaurant=new Restaurant(1234L,"BeRyong","Seoul");
         //{"name":"BeRyong","address":"Busan"}
+        given(restaurantService.addRestaurant(any())).will(invocation -> {
+            Restaurant restaurant=invocation.getArgument(0);
+            return Restaurant.builder().id(1234L).name(restaurant.getName()).address(restaurant.getAddress()).build();
+        });
+
         mvc.perform(MockMvcRequestBuilders.post("/restaurants")
                 .contentType(MediaType.APPLICATION_JSON) //JSON 타입이라는 것을 알려줌
                 .content("{\"name\":\"BeRyong\",\"address\":\"Busan\"}"))
