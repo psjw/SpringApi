@@ -86,7 +86,7 @@ public class RestaurantControllerTest {
 
 
     @Test
-    public void create() throws Exception {
+    public void createWithValidData() throws Exception {
         //Argument(s) are different! Wanted:
         //선언한 객체와 실행된 객체가 다르다
         //  Restaurant restaurant=new Restaurant(1234L,"BeRyong","Seoul"); 와  verify(restaurantService).addRestaurant(restaurant); 의
@@ -100,7 +100,7 @@ public class RestaurantControllerTest {
 
         mvc.perform(MockMvcRequestBuilders.post("/restaurants")
                 .contentType(MediaType.APPLICATION_JSON) //JSON 타입이라는 것을 알려줌
-                .content("{\"name\":\"BeRyong\",\"address\":\"Busan\"}"))
+                .content("{\"id\":\""+1234L+"\",\"name\":\"BeRyong\",\"address\":\"Busan\"}"))
                 .andExpect(status().isCreated())
                 .andExpect(header().string("location","/restaurants/1234"))
                 .andExpect(content().string("{}"));
@@ -108,13 +108,35 @@ public class RestaurantControllerTest {
         //given  willReturn 을 확인 가능
         verify(restaurantService).addRestaurant(any());
     }
-
     @Test
-    public void update() throws Exception {
+    public void createWithInvalidData() throws Exception {
+
+        mvc.perform(MockMvcRequestBuilders.post("/restaurants")
+                .contentType(MediaType.APPLICATION_JSON) //JSON 타입이라는 것을 알려줌
+                .content("{\"name\":\"\",\"address\":\"\"}"))
+                .andExpect(status().isBadRequest());
+
+    }
+    @Test
+    public void updateWithValidData() throws Exception {
         mvc.perform(patch("/restaurants/1004")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\"name\":\"JOKER Bar\",\"address\":\"Busan\"}"))
                 .andExpect(status().isOk());
         verify(restaurantService).updateRestaurant(1004L,"JOKER Bar","Busan");
+    }
+    @Test
+    public void updateWithInvalidData() throws Exception {
+        mvc.perform(patch("/restaurants/1004")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"name\":\"\",\"address\":\"\"}"))
+                .andExpect(status().isBadRequest());
+    }
+    @Test
+    public void updateWithoutName() throws Exception {
+        mvc.perform(patch("/restaurants/1004")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"name\":\"\",\"address\":\"Busan\"}"))
+                .andExpect(status().isBadRequest());
     }
 }

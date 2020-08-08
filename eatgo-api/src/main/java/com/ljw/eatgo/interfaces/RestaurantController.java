@@ -8,8 +8,10 @@ import com.ljw.eatgo.domain.Restaurant;
 import com.ljw.eatgo.domain.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -57,12 +59,12 @@ public class RestaurantController {
     }
 
     @PostMapping("/restaurants")
-    public ResponseEntity<?> create(@RequestBody Restaurant resource) throws URISyntaxException {
+    public ResponseEntity<?> create(@Valid @RequestBody Restaurant resource) throws URISyntaxException {
         String name = resource.getName();
         String address = resource.getAddress();
-
+        Long id=resource.getId();
 //        Restaurant restaurant=new Restaurant(name, address);
-        Restaurant restaurant=Restaurant.builder().name(name).address(address).build();
+        Restaurant restaurant=Restaurant.builder().id(id).name(name).address(address).build();
         restaurantSergvice.addRestaurant(restaurant);
 
         URI location=new URI("/restaurants/"+restaurant.getId());
@@ -70,7 +72,7 @@ public class RestaurantController {
     }
 
     @PatchMapping("/restaurants/{id}")
-    public String update(@PathVariable("id") Long id, @RequestBody Restaurant resource){
+    public String update(@PathVariable("id") Long id,@Valid @RequestBody Restaurant resource){
         String name = resource.getName();
         String address = resource.getAddress();
         restaurantSergvice.updateRestaurant(id, name, address);

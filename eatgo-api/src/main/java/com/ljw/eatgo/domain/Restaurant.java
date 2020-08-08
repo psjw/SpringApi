@@ -1,8 +1,10 @@
 package com.ljw.eatgo.domain;
 
 import lombok.*;
+import net.bytebuddy.implementation.bind.annotation.Empty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +19,11 @@ public class Restaurant {
     @GeneratedValue
     private Long id;
 
+
+    @NotEmpty
     private  String name;
+
+    @NotEmpty
     private  String address;
  
     @Transient //무시하고 통과
