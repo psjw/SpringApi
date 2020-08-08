@@ -1,14 +1,13 @@
 package com.ljw.eatgo.domain;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 //Caused by: java.lang.IllegalArgumentException: Not a managed type: class com.ljw.eatgo.domain.MenuItem
 // -> @Entity 필요
@@ -27,12 +26,17 @@ public class MenuItem {
     @GeneratedValue
     private Long id;
 
+    @Transient
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    private boolean destroy;
+
 
 
     private String name;
 
     //Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List com.ljw.eatgo.domain.MenuItemRepository.
     // findAllByRestaurantId(java.lang.Long)! No property restaurantId found for type MenuItem!
+    @Setter
     private Long restaurantId; //추가
 
 //

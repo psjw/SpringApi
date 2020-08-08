@@ -1,5 +1,6 @@
 package com.ljw.eatgo.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import net.bytebuddy.implementation.bind.annotation.Empty;
 
@@ -27,6 +28,7 @@ public class Restaurant {
     private  String address;
  
     @Transient //무시하고 통과
+    @JsonInclude(JsonInclude.Include.NON_NULL)//Null이 아닐때만 Json 에 넣어줌
     private List<MenuItem> menuItems;
 
 //

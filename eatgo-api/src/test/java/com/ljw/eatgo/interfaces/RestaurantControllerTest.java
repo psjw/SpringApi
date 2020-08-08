@@ -22,6 +22,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -62,7 +63,7 @@ public class RestaurantControllerTest {
     }
 
     @Test
-    public void detail() throws Exception {
+    public void detailIsExisted() throws Exception {
 //        Restaurant restuarant1=new Restaurant(1004L,"JOKER House","Seoul");
         Restaurant restuarant1= Restaurant.builder().id(1004L).name("JOKER House").address("Seoul").build();
         MenuItem menuItem=MenuItem.builder().name("Kimchi").build();
@@ -82,6 +83,13 @@ public class RestaurantControllerTest {
         mvc.perform(MockMvcRequestBuilders.get("/restaurants/2020")).andExpect(status().isOk())
                 .andExpect(content().string(containsString("\"id\":2020")))
                 .andExpect(content().string(containsString("\"name\":\"Cyber Food\"")));
+    }
+
+    @Test
+    public void detailWithNotExisted() throws Exception {
+        given(restaurantService.getRestaurant(404L)).willThrow(new RestaurantNotFoundException(404L));
+        mvc.perform(get("/restaurants/404")).andExpect(status().isNotFound())
+        .andExpect(content().string("{}"));
     }
 
 
