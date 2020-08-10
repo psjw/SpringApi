@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ljw.eatgo.interfaces.ReviewControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-08-10T11:11:14" hostname="ijin-uui-MacBookPro.local" time="0.034">
+  <properties/>
+  <testcase name="createWithValidAttributes" classname="com.ljw.eatgo.interfaces.ReviewControllerTest" time="0.018"/>
+  <testcase name="createWithInvalidAttributes" classname="com.ljw.eatgo.interfaces.ReviewControllerTest" time="0.014"/>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2020-08-10 20:11:14.642  INFO 18702 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : Starting ReviewControllerTest on ijin-uui-MacBookPro.local with PID 18702 (started by jw.lee in /Users/jw.lee/ljw-study/spring/eatgo/SpringApi/eatgo-customer-api)
+2020-08-10 20:11:14.642  INFO 18702 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : No active profile set, falling back to default profiles: default
+2020-08-10 20:11:14.849  INFO 18702 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-10 20:11:14.938  INFO 18702 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-10 20:11:14.938  INFO 18702 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-10 20:11:14.945  INFO 18702 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 6 ms
+2020-08-10 20:11:14.956  INFO 18702 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : Started ReviewControllerTest in 0.328 seconds (JVM running for 8.292)
+2020-08-10 20:11:14.989  WARN 18702 --- [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public org.springframework.http.ResponseEntity<?> com.ljw.eatgo.interfaces.ReviewController.create(java.lang.Long,com.ljw.eatgo.domain.Review) throws java.net.URISyntaxException with 3 errors: [Field error in object 'review' on field 'description': rejected value [null]; codes [NotEmpty.review.description,NotEmpty.description,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.description,description]; arguments []; default message [description]]; default message [must not be empty]] [Field error in object 'review' on field 'score': rejected value [null]; codes [NotNull.review.score,NotNull.score,NotNull.java.lang.Integer,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.score,score]; arguments []; default message [score]]; default message [must not be null]] [Field error in object 'review' on field 'name': rejected value [null]; codes [NotEmpty.review.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.name,name]; arguments []; default message [name]]; default message [must not be empty]] ]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

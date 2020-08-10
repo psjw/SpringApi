@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-admin-api/com.ljw.eatgo.eatgo-admin-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-admin-api/com.ljw.eatgo.eatgo-admin-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-admin-api/com.ljw.eatgo.eatgo-admin-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-admin-api/com.ljw.eatgo.eatgo-admin-api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-common/com.ljw.eatgo.eatgo-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-common/com.ljw.eatgo.eatgo-common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-common/com.ljw.eatgo.eatgo-common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-common/com.ljw.eatgo.eatgo-common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-customer-api/com.ljw.eatgo.eatgo-customer-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-customer-api/com.ljw.eatgo.eatgo-customer-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-customer-api/com.ljw.eatgo.eatgo-customer-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-customer-api/com.ljw.eatgo.eatgo-customer-api.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/eatgo.iml" filepath="$PROJECT_DIR$/.idea/eatgo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-api/eatgo.eatgo-api.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-api/eatgo.eatgo-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-api/eatgo.eatgo-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-api/eatgo.eatgo-api.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-api/eatgo.eatgo-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-api/eatgo.eatgo-api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo-admin-api.eatgo.eatgo-admin-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo-admin-api.eatgo.eatgo-admin-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo-admin-api.eatgo.eatgo-admin-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo-admin-api.eatgo.eatgo-admin-api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo-common.eatgo.eatgo-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo-common.eatgo.eatgo-common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo-common.eatgo.eatgo-common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo-common.eatgo.eatgo-common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo.eatgo-admin-api.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo.eatgo-admin-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo.eatgo-admin-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo.eatgo-admin-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo.eatgo-admin-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-admin-api/eatgo.eatgo-admin-api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo.eatgo-common.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo.eatgo-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo.eatgo-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo.eatgo-common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo.eatgo-common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-common/eatgo.eatgo-common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-customer-api/eatgo.eatgo-customer-api.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-customer-api/eatgo.eatgo-customer-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-customer-api/eatgo.eatgo-customer-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-customer-api/eatgo.eatgo-customer-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eatgo-customer-api/eatgo.eatgo-customer-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eatgo-customer-api/eatgo.eatgo-customer-api.test.iml" />
     </modules>
   </component>
 </project>
