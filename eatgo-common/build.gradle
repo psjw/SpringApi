@@ -5,6 +5,8 @@ plugins {
 }
 
 bootJar{
+	//spring-starter-web을 제거 하고 jackson을 넣는방법도 있음
+	//endabled=false
 	enabled=false
 }
 

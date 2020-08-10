@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.032s</div>
+<div class="counter">0.130s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">createWithInvalidAttributes</td>
-<td class="success">0.014s</td>
+<td class="success">0.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">createWithValidAttributes</td>
-<td class="success">0.018s</td>
+<td class="success">0.112s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -101,14 +101,14 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.1.RELEASE)
 
-2020-08-10 20:11:14.642  INFO 18702 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : Starting ReviewControllerTest on ijin-uui-MacBookPro.local with PID 18702 (started by jw.lee in /Users/jw.lee/ljw-study/spring/eatgo/SpringApi/eatgo-customer-api)
-2020-08-10 20:11:14.642  INFO 18702 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : No active profile set, falling back to default profiles: default
-2020-08-10 20:11:14.849  INFO 18702 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-08-10 20:11:14.938  INFO 18702 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2020-08-10 20:11:14.938  INFO 18702 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-08-10 20:11:14.945  INFO 18702 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 6 ms
-2020-08-10 20:11:14.956  INFO 18702 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : Started ReviewControllerTest in 0.328 seconds (JVM running for 8.292)
-2020-08-10 20:11:14.989  WARN 18702 --- [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public org.springframework.http.ResponseEntity&lt;?&gt; com.ljw.eatgo.interfaces.ReviewController.create(java.lang.Long,com.ljw.eatgo.domain.Review) throws java.net.URISyntaxException with 3 errors: [Field error in object 'review' on field 'description': rejected value [null]; codes [NotEmpty.review.description,NotEmpty.description,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.description,description]; arguments []; default message [description]]; default message [must not be empty]] [Field error in object 'review' on field 'score': rejected value [null]; codes [NotNull.review.score,NotNull.score,NotNull.java.lang.Integer,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.score,score]; arguments []; default message [score]]; default message [must not be null]] [Field error in object 'review' on field 'name': rejected value [null]; codes [NotEmpty.review.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.name,name]; arguments []; default message [name]]; default message [must not be empty]] ]
+2020-08-10 20:56:58.462  INFO 20955 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : Starting ReviewControllerTest on ijin-uui-MacBookPro.local with PID 20955 (started by jw.lee in /Users/jw.lee/ljw-study/spring/eatgo/SpringApi/eatgo-customer-api)
+2020-08-10 20:56:58.464  INFO 20955 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : No active profile set, falling back to default profiles: default
+2020-08-10 20:56:58.723  INFO 20955 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-10 20:56:58.810  INFO 20955 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-08-10 20:56:58.810  INFO 20955 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-08-10 20:56:58.814  INFO 20955 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2020-08-10 20:56:58.822  INFO 20955 --- [    Test worker] c.l.e.interfaces.ReviewControllerTest    : Started ReviewControllerTest in 0.387 seconds (JVM running for 7.781)
+2020-08-10 20:56:58.952  WARN 20955 --- [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public org.springframework.http.ResponseEntity&lt;?&gt; com.ljw.eatgo.interfaces.ReviewController.create(java.lang.Long,com.ljw.eatgo.domain.Review) throws java.net.URISyntaxException with 3 errors: [Field error in object 'review' on field 'score': rejected value [null]; codes [NotNull.review.score,NotNull.score,NotNull.java.lang.Integer,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.score,score]; arguments []; default message [score]]; default message [must not be null]] [Field error in object 'review' on field 'description': rejected value [null]; codes [NotEmpty.review.description,NotEmpty.description,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.description,description]; arguments []; default message [description]]; default message [must not be empty]] [Field error in object 'review' on field 'name': rejected value [null]; codes [NotEmpty.review.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [review.name,name]; arguments []; default message [name]]; default message [must not be empty]] ]
 </pre>
 </span>
 </div>
@@ -120,7 +120,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.4.1</a> at 2020. 8. 10. 오후 8:11:16</p>
+<a href="http://www.gradle.org">Gradle 6.4.1</a> at 2020. 8. 10. 오후 8:57:00</p>
 </div>
 </div>
 </body>

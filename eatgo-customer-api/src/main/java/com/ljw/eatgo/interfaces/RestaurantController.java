@@ -54,24 +54,4 @@ public class RestaurantController {
         return restaurant;
     }
 
-    @PostMapping("/restaurants")
-    public ResponseEntity<?> create(@Valid @RequestBody Restaurant resource) throws URISyntaxException {
-        String name = resource.getName();
-        String address = resource.getAddress();
-        Long id=resource.getId();
-//        Restaurant restaurant=new Restaurant(name, address);
-        Restaurant restaurant=Restaurant.builder().id(id).name(name).address(address).build();
-        restaurantSergvice.addRestaurant(restaurant);
-
-        URI location=new URI("/restaurants/"+restaurant.getId());
-        return ResponseEntity.created(location).body("{}");
-    }
-
-    @PatchMapping("/restaurants/{id}")
-    public String update(@PathVariable("id") Long id,@Valid @RequestBody Restaurant resource){
-        String name = resource.getName();
-        String address = resource.getAddress();
-        restaurantSergvice.updateRestaurant(id, name, address);
-        return "{}";
-    }
 }

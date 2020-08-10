@@ -65,19 +65,13 @@ public class RestaurantControllerTest {
     @Test
     public void detailIsExisted() throws Exception {
         Restaurant restuarant= Restaurant.builder().id(1004L).name("JOKER House").address("Seoul").build();
-        MenuItem menuItem=MenuItem.builder().name("Kimchi").build();
-        restuarant.setMenuItems(Arrays.asList(menuItem));
-        Review review=Review.builder().name("JOKER").score(5).description("Great!").build();
-//        Restaurant restuarant2=Restaurant.builder().id(2020L).name("Cyber Food").address("Seoul").build();
-        restuarant.setReview(Arrays.asList(review));
         given(restaurantService.getRestaurant(1004L)).willReturn(restuarant);
 
 
         mvc.perform(MockMvcRequestBuilders.get("/restaurants/1004")).andExpect(status().isOk())
                 .andExpect(content().string(containsString("\"id\":1004")))
-                .andExpect(content().string(containsString("\"name\":\"JOKER House\"")))
-                .andExpect(content().string(containsString("Kimchi")))
-                .andExpect(content().string(containsString("Great!")));
+                .andExpect(content().string(containsString("\"name\":\"JOKER House\"")));
+
 
     }
 

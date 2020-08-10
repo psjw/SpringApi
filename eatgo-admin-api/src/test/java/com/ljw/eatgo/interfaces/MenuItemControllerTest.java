@@ -1,6 +1,7 @@
 package com.ljw.eatgo.interfaces;
 
 import com.ljw.eatgo.application.MenuItemService;
+import com.ljw.eatgo.domain.MenuItem;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,10 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.List;
+
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
@@ -24,6 +29,7 @@ public class MenuItemControllerTest {
 
     @MockBean
     private MenuItemService menuItemService;
+
 
     @Test
     public void bulkUpdate() throws Exception {

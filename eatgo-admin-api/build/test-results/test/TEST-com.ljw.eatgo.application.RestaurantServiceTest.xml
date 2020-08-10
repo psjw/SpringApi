@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ljw.eatgo.application.RestaurantServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-10T08:03:52" hostname="ijin-uui-MacBookPro.local" time="0.381">
+<testsuite name="com.ljw.eatgo.application.RestaurantServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-08-10T11:56:40" hostname="ijin-uui-MacBookPro.local" time="0.025">
   <properties/>
-  <testcase name="getRestaurantWithExisted" classname="com.ljw.eatgo.application.RestaurantServiceTest" time="0.381"/>
+  <testcase name="addRestaurant" classname="com.ljw.eatgo.application.RestaurantServiceTest" time="0.021"/>
+  <testcase name="getRestaurantWithNotExisted" classname="com.ljw.eatgo.application.RestaurantServiceTest" time="0.002"/>
+  <testcase name="getRestaurantWithExisted" classname="com.ljw.eatgo.application.RestaurantServiceTest" time="0.001"/>
+  <testcase name="getRestaurants" classname="com.ljw.eatgo.application.RestaurantServiceTest" time="0.0"/>
+  <testcase name="updateRestaurant" classname="com.ljw.eatgo.application.RestaurantServiceTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
