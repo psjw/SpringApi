@@ -31,6 +31,10 @@ public class Restaurant {
     @JsonInclude(JsonInclude.Include.NON_NULL)//Null이 아닐때만 Json 에 넣어줌
     private List<MenuItem> menuItems;
 
+    @Transient
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private ArrayList<Review> reviews;
+
 //
 //    public Restaurant(Long id, String name, String address) {
 //        this.name = name;
@@ -69,5 +73,9 @@ public class Restaurant {
     public void updateInformation(String name, String address) {
         this.name=name;
         this.address=address;
+    }
+
+    public void setReview(List<Review> reviews) {
+        this.reviews=new ArrayList<>(reviews);
     }
 }

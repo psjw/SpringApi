@@ -64,25 +64,21 @@ public class RestaurantControllerTest {
 
     @Test
     public void detailIsExisted() throws Exception {
-//        Restaurant restuarant1=new Restaurant(1004L,"JOKER House","Seoul");
-        Restaurant restuarant1= Restaurant.builder().id(1004L).name("JOKER House").address("Seoul").build();
+        Restaurant restuarant= Restaurant.builder().id(1004L).name("JOKER House").address("Seoul").build();
         MenuItem menuItem=MenuItem.builder().name("Kimchi").build();
-        restuarant1.setMenuItems(Arrays.asList(menuItem));
-//        Restaurant restuarant2=new Restaurant(2020L,"Cyber Food","Seoul");
-        Restaurant restuarant2=Restaurant.builder().id(2020L).name("Cyber Food").address("Seoul").build();
-//        restuarant2.setMenuItems(Arrays.asList(new MenuItem("Kimchi")));
-        given(restaurantService.getRestaurant(1004L)).willReturn(restuarant1);
-        given(restaurantService.getRestaurant(2020L)).willReturn(restuarant2);
+        restuarant.setMenuItems(Arrays.asList(menuItem));
+        Review review=Review.builder().name("JOKER").score(5).description("Great!").build();
+//        Restaurant restuarant2=Restaurant.builder().id(2020L).name("Cyber Food").address("Seoul").build();
+        restuarant.setReview(Arrays.asList(review));
+        given(restaurantService.getRestaurant(1004L)).willReturn(restuarant);
 
 
         mvc.perform(MockMvcRequestBuilders.get("/restaurants/1004")).andExpect(status().isOk())
                 .andExpect(content().string(containsString("\"id\":1004")))
                 .andExpect(content().string(containsString("\"name\":\"JOKER House\"")))
-                .andExpect(content().string(containsString("Kimchi")));
+                .andExpect(content().string(containsString("Kimchi")))
+                .andExpect(content().string(containsString("Great!")));
 
-        mvc.perform(MockMvcRequestBuilders.get("/restaurants/2020")).andExpect(status().isOk())
-                .andExpect(content().string(containsString("\"id\":2020")))
-                .andExpect(content().string(containsString("\"name\":\"Cyber Food\"")));
     }
 
     @Test
